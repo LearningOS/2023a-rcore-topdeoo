@@ -85,11 +85,12 @@ fn kernel_log_info() {
         "[kernel] .data [{:#x}, {:#x})",
         sdata as usize, edata as usize
     );
-    warn!(
+    trace!(
         "[kernel] boot_stack top=bottom={:#x}, lower_bound={:#x}",
-        boot_stack_top as usize, boot_stack_lower_bound as usize
+        boot_stack_top as usize,
+        boot_stack_lower_bound as usize
     );
-    error!("[kernel] .bss [{:#x}, {:#x})", sbss as usize, ebss as usize);
+    trace!("[kernel] .bss [{:#x}, {:#x})", sbss as usize, ebss as usize);
 }
 
 #[no_mangle]
